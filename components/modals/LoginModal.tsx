@@ -20,13 +20,20 @@ const LoginModal = () => {
     try {
       setIsLoading(true);
 
+      await signIn('credentials', {
+        email,
+        password,
+      });
+
+      toast.success('Logged in');
+
       loginModal.onClose();
     } catch (error) {
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal]);
+  }, [loginModal, email, password]);
 
   const onToggle = useCallback(() => {
     loginModal.onClose();

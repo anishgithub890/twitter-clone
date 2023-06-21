@@ -33,7 +33,21 @@ const RegisterModal = () => {
     try {
       setIsLoading(true);
 
+      await axios.post('/api/register', {
+        email,
+        password,
+        username,
+        name,
+      });
+
       setIsLoading(false);
+
+      toast.success('Account created.');
+
+      signIn('credentials', {
+        email,
+        password,
+      });
 
       registerModal.onClose();
     } catch (error) {
@@ -41,8 +55,7 @@ const RegisterModal = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [registerModal]);
-
+  }, [email, password, registerModal, username, name]);
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
