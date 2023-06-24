@@ -33,7 +33,7 @@ const LoginModal = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal, email, password]);
+  }, [email, password, loginModal]);
 
   const onToggle = useCallback(() => {
     loginModal.onClose();

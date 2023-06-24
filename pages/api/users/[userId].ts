@@ -9,6 +9,7 @@ export default async function handler(
   if (req.method !== 'GET') {
     return res.status(405).end();
   }
+
   try {
     const { userId } = req.query;
 
@@ -29,6 +30,7 @@ export default async function handler(
         },
       },
     });
+
     return res.status(200).json({ ...existingUser, followersCount });
   } catch (error) {
     console.log(error);

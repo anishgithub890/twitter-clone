@@ -56,6 +56,7 @@ const RegisterModal = () => {
       setIsLoading(false);
     }
   }, [email, password, registerModal, username, name]);
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
@@ -98,6 +99,7 @@ const RegisterModal = () => {
             hover:underline
           "
         >
+          {' '}
           Sign in
         </span>
       </p>
