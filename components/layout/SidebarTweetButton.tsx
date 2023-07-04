@@ -22,7 +22,7 @@ const SidebarTweetButton = () => {
     <div onClick={onClick}>
       <div
         className="
-        mt-6
+        mt-7
         lg:hidden 
         rounded-full 
         h-14
